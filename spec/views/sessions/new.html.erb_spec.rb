@@ -13,4 +13,10 @@ RSpec.describe "application/hello", type: :view do
     render
     expect(rendered).to include 'Hi, Pete'
   end
+  
+    it "greets user by name if logged in" do
+    session[:name] = 'Wes'
+    render
+    expect(rendered).to include 'Hi, Wes'
+  end
 end
